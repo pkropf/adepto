@@ -204,30 +204,34 @@ void count_the_money()
 {
   unsigned long int now = millis();
 
-  dollar = 20;
-  sequence_active = true;
+  //dollar = 20;
+  //sequence_active = true;
 
   if (((now - apex_change) > done_pulsing) && ! apex_checked) { // no pulses for more than 1/10 second
 
     if (pulses == 1 * pulses_per_dollar) {           // $1
+      //Serial.println("dollar: 1");
       dollar = 1;
       sequence_active = true;
 
     } else {
 
       if (pulses == 5 * pulses_per_dollar) {         // $5
+        //Serial.println("dollar: 5");
         dollar = 5;
         sequence_active = true;
 
       } else {
 
         if (pulses == 10 * pulses_per_dollar) {      // $10
+          //Serial.println("dollar: 10");
           dollar = 10;
           sequence_active = true;
 
         } else {
 
           if (pulses == 20 * pulses_per_dollar) {    // $20
+            //Serial.println("dollar: 20");
             dollar = 20;
             sequence_active = true;
           }
@@ -420,7 +424,9 @@ void single_step()
 
 void loop()
 {
-  //Serial.println("loop");
+  //Serial.print("loop: ");
+  //Serial.print(pulses);
+  //Serial.println("");
   check_single_switch();
   single_step();
 
