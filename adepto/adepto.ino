@@ -204,8 +204,21 @@ void count_the_money()
 {
   unsigned long int now = millis();
 
-  //dollar = 20;
-  //sequence_active = true;
+  switch (random(1, 5)) {
+  case 1:
+    dollar = 1;
+    break;
+  case 2:
+    dollar = 5;
+    break;
+  case 3:
+    dollar = 10;
+    break;
+  case 4:
+    dollar = 20;
+    break;
+  }
+  sequence_active = true;
 
   if (((now - apex_change) > done_pulsing) && ! apex_checked) { // no pulses for more than 1/10 second
 
